@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Việt Anh - Developer Intern Portfolio</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Corporate red theme for Rekkei target
+                        primary: {
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c', // Main Rekkei-like Red
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                        },
+                        dark: '#111827',
+                        light: '#f9fafb'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { -webkit-font-smoothing: antialiased; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #b91c1c; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #991b1b; }
+        /* Gradient text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #b91c1c, #ef4444);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="text-2xl font-black text-primary-700 tracking-tighter">VA.</span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-gray-600 hover:text-primary-700 font-medium transition-colors">Giới thiệu</a>
+                    <a href="#skills" class="text-gray-600 hover:text-primary-700 font-medium transition-colors">Kỹ năng</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary-700 font-medium transition-colors">Dự án</a>
+                    <a href="#contact" class="px-5 py-2 rounded-full bg-primary-700 text-white font-medium hover:bg-primary-800 shadow-md transition-all transform hover:-translate-y-0.5">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="absolute top-0 right-0 -z-10 w-96 h-96 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+            
+            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="w-full md:w-3/5 text-center md:text-left reveal active">
+                    <p class="text-primary-600 font-semibold tracking-wide uppercase mb-2">Xin chào, tôi là</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+                        NGUYỄN <br class="hidden md:block"/>
+                        <span class="text-gradient">VIỆT ANH</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gray-600 font-medium mb-6">Ứng viên <span class="font-bold text-gray-800">Developer Intern</span></h2>
+                    <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                        Sinh viên năm 3 chuyên ngành Công nghệ thông tin. Sẵn sàng gia nhập môi trường chuyên nghiệp để phát triển kỹ năng thực tế, viết code chuẩn và fix bug hiệu quả.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#projects" class="px-8 py-3.5 rounded-full bg-primary-700 text-white font-bold hover:bg-primary-800 shadow-lg shadow-primary-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            Xem Dự Án <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <a href="https://github.com/vanh251" target="_blank" class="px-8 py-3.5 rounded-full bg-white text-gray-800 border border-gray-200 font-bold hover:border-gray-800 hover:bg-gray-50 shadow-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-github text-lg"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Avatar/Image -->
+                <div class="w-full md:w-2/5 flex justify-center reveal active">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 rounded-full border-4 border-primary-100 scale-105"></div>
+                        <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gray-200 z-10 flex justify-center items-center">
+                            <!-- Placeholder image -->
+                            <img src="https://ui-avatars.com/api/?name=Viet+Anh&background=b91c1c&color=fff&size=512&font-size=0.33" alt="Nguyễn Việt Anh" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Education Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Hồ Sơ Năng Lực</h2>
+                <div class="w-20 h-1.5 bg-primary-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Giới thiệu -->
+                <div class="reveal">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center text-primary-600">
+                            <i class="fa-solid fa-user-tie text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Giới thiệu bản thân</h3>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm relative h-full">
+                        <i class="fa-solid fa-quote-left absolute top-4 left-4 text-3xl text-gray-200 opacity-50"></i>
+                        <p class="text-gray-700 leading-relaxed relative z-10 text-justify">
+                            Là sinh viên năm 3 chuyên ngành Công nghệ thông tin, tôi nắm vững nền tảng về Cấu trúc dữ liệu, Thuật toán và Lập trình hướng đối tượng. Tôi có tư duy logic tốt, khả năng học hỏi công nghệ mới nhanh chóng và đã làm quen với quy trình Agile/Scrum qua các dự án tại trường. 
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-4 relative z-10 text-justify">
+                            Với mong muốn được phát triển sâu hơn về kỹ thuật, tôi hy vọng được gia nhập <strong class="text-primary-700">Rekkei</strong> để thực tập <b>full-time</b>, được làm việc thực tế, viết code theo chuẩn, fix bug và học hỏi trực tiếp từ các mentor giàu kinh nghiệm.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Học vấn & Chứng chỉ -->
+                <div class="space-y-8 reveal" style="transition-delay: 0.2s;">
+                    <!-- Education -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center text-primary-600">
+                                <i class="fa-solid fa-graduation-cap text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Học vấn</h3>
+                        </div>
+                        
+                        <div class="relative pl-6 border-l-2 border-primary-200">
+                            <div class="absolute w-4 h-4 rounded-full bg-primary-600 -left-[9px] top-1 ring-4 ring-white"></div>
+                            <h4 class="font-bold text-lg text-gray-900">Sinh viên Công nghệ thông tin</h4>
+                            <p class="text-primary-700 font-semibold mb-1">Học viện Công nghệ bưu chính viễn thông</p>
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full font-medium mb-3">2023 - 2028</span>
+                        </div>
+                    </div>
+
+                    <!-- Certificates -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center text-primary-600">
+                                <i class="fa-solid fa-certificate text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Chứng chỉ</h3>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-4 shadow-sm">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                                <i class="fa-solid fa-language text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Tiếng Anh</h4>
+                                <p class="text-gray-600">Trình độ: <span class="font-semibold text-primary-700">B2 Aptis</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Kỹ Năng</h2>
+                <div class="w-20 h-1.5 bg-primary-600 mx-auto rounded-full mb-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Ngôn ngữ & Tech -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 reveal">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 border-b pb-2">Chuyên môn Kỹ thuật</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li>
+                            <span class="font-bold text-primary-700">Ngôn ngữ:</span> Java, JavaScript, HTML/CSS, SQL cơ bản.
+                        </li>
+                        <li>
+                            <span class="font-bold text-primary-700">Công cụ:</span> Git/GitHub, VS Code, Postman.
+                        </li>
+                        <li>
+                            <span class="font-bold text-primary-700">Quy trình:</span> Hiểu biết cơ bản về Agile/Scrum, Unit Testing.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 reveal lg:col-span-2" style="transition-delay: 0.1s;">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 border-b pb-2">Kỹ năng khác</h3>
+                    <ul class="space-y-4 text-gray-700 grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check-circle text-primary-500 mt-1"></i>
+                            <span><b>Ngoại ngữ:</b> Tiếng Anh đọc hiểu tài liệu chuyên ngành tốt.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check-circle text-primary-500 mt-1"></i>
+                            <span><b>Soft skills:</b> Tư duy logic tốt, khả năng tự học và giải quyết vấn đề.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dự Án Cá Nhân / Học Tập</h2>
+                <div class="w-20 h-1.5 bg-primary-600 mx-auto rounded-full mb-6"></div>
+            </div>
+
+            <div class="space-y-12">
+                
+                <!-- Project 1: E-Learning -->
+                <div class="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 reveal flex flex-col md:flex-row group">
+                    <div class="w-full md:w-1/3 bg-gray-50 border-b md:border-b-0 md:border-r border-gray-200 p-8 flex flex-col justify-center items-center relative overflow-hidden">
+                        <i class="fa-solid fa-laptop-code text-6xl text-primary-300 mb-4 group-hover:scale-110 transition-transform duration-500"></i>
+                        <h3 class="text-xl font-bold text-center text-gray-900 mt-2">HỆ THỐNG <br>E-LEARNING</h3>
+                        <span class="mt-3 px-3 py-1 bg-white border border-gray-200 text-xs font-bold tracking-wider text-gray-500 rounded-full uppercase">RESTful API</span>
+                        
+                        <!-- GitHub Repo Button -->
+                        <a href="https://github.com/vanh251/project_module03" target="_blank" class="mt-6 w-full text-center px-4 py-2.5 bg-gray-900 hover:bg-gray-800 text-white rounded-lg font-medium text-sm transition-colors flex justify-center items-center gap-2">
+                            <i class="fa-brands fa-github text-lg"></i> Xem Source Code
+                        </a>
+                    </div>
+                    
+                    <div class="w-full md:w-2/3 p-8 md:p-10">
+                        <ul class="list-disc pl-5 text-gray-700 space-y-3">
+                            <li><span class="font-bold">Mô tả:</span> Hệ thống API quản lý khóa học, bài giảng và theo dõi tiến độ học tập.</li>
+                            <li><span class="font-bold">Công nghệ:</span> Java, Spring Boot, Spring Security (JWT), JPA/Hibernate.</li>
+                            <li><span class="font-bold">Thành tích:</span> Áp dụng kiến trúc 3-tier, xử lý dữ liệu qua DTO & Mapper. Bắt lỗi API tập trung với GlobalExceptionHandler. Xây dựng cơ chế xác thực và phân quyền bảo mật (Role-based) chặt chẽ.</li>
+                            <li><span class="font-bold">Kỹ năng:</span> Tối ưu hóa truy vấn bằng phân trang (Pagination), thiết kế API chuẩn REST.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 2: DBMS -->
+                <div class="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 reveal flex flex-col md:flex-row group">
+                    <div class="w-full md:w-1/3 bg-gray-50 border-b md:border-b-0 md:border-r border-gray-200 p-8 flex flex-col justify-center items-center relative overflow-hidden">
+                        <i class="fa-solid fa-database text-6xl text-primary-300 mb-4 group-hover:scale-110 transition-transform duration-500"></i>
+                        <h3 class="text-xl font-bold text-center text-gray-900 mt-2">QUẢN LÝ KHÓA HỌC <br>& THANH TOÁN</h3>
+                        <span class="mt-3 px-3 py-1 bg-white border border-gray-200 text-xs font-bold tracking-wider text-gray-500 rounded-full uppercase">DBMS Project</span>
+                        
+                        <!-- GitHub Repo Button -->
+                        <a href="https://github.com/vanh251/dbms_project" target="_blank" class="mt-6 w-full text-center px-4 py-2.5 bg-gray-900 hover:bg-gray-800 text-white rounded-lg font-medium text-sm transition-colors flex justify-center items-center gap-2">
+                            <i class="fa-brands fa-github text-lg"></i> Xem Source Code
+                        </a>
+                    </div>
+                    
+                    <div class="w-full md:w-2/3 p-8 md:p-10">
+                        <ul class="list-disc pl-5 text-gray-700 space-y-3">
+                            <li><span class="font-bold">Mô tả:</span> Ứng dụng Web (Client & Admin) tập trung thiết kế và tối ưu Cơ sở dữ liệu.</li>
+                            <li><span class="font-bold">Công nghệ:</span> Java, Spring Boot, SQL nâng cao, HTML/CSS/JS.</li>
+                            <li><span class="font-bold">Thành tích:</span> Mô hình hóa cấu trúc DB. Tự viết script SQL nâng cao: Stored Procedures, Triggers, Views và Transactions để đảm bảo tính toàn vẹn dữ liệu khi xử lý thanh toán.</li>
+                            <li><span class="font-bold">Kỹ năng:</span> Full-stack cơ bản, gọi API từ giao diện Frontend (JS) lên Backend, hiểu rõ luồng giao tiếp hệ thống.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="py-16 bg-gray-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl font-bold mb-8">Thông tin liên hệ</h2>
+            
+            <div class="bg-gray-800 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-8 border border-gray-700">
+                <a href="mailto:nguyenvietanh0125@gmail.com" class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-primary-400">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="font-medium text-sm md:text-base">nguyenvietanh0125@gmail.com</span>
+                </a>
+                <a href="tel:0797522888" class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-primary-400">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="font-medium">0797522888</span>
+                </a>
+                <div class="flex items-center gap-3 text-gray-300">
+                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-primary-400">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <span class="font-medium text-sm md:text-base">Hà Đông, Hà Nội, Việt Nam</span>
+                </div>
+            </div>
+
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="year">2026</span> Nguyễn Việt Anh.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Reveal animations on scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+    </script>
+</body>
+</html>
